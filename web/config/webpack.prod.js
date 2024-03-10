@@ -25,7 +25,7 @@ const CONTEXT = process.cwd()
 
 const prodConfig = {
   context: CONTEXT,
-  entry: path.resolve(CONTEXT, '/src/index.tsx'),
+  entry: CONTEXT + '/src/index.tsx',
   mode: 'production',
   devtool: process.env.ENABLE_SOURCE_MAP ? 'source-map' : false,
   output: {

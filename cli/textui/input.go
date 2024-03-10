@@ -19,7 +19,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"syscall"
 
 	"golang.org/x/term"
 )
@@ -77,7 +76,7 @@ func Email() string {
 // Password returns the password from stdin.
 func Password() string {
 	fmt.Print("Enter Password: ")
-	passwordb, _ := term.ReadPassword(syscall.Stdin)
+	passwordb, _ := term.ReadPassword(int(os.Stdin.Fd()))
 	password := string(passwordb)
 
 	return strings.TrimSpace(password)
